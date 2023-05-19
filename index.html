@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>主页</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="icon" href="https://api.iconify.design/logos:glamorous-icon.svg?color=%23dd1d1d">
+	<!-- 引入ElementUI的CSS库 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<!-- 引入Vue -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+	<!-- 引入Axios.js（用于发送HTTP请求） -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
+	<!-- 引入ElementUI的组件库 -->
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<!-- 背景图 -->
+		<!-- 	<div class="background" :class="{use_image:!notIpad}">
+				<video v-if="notIpad" class="wallpaper_video" autoplay loop muted playsinline preload="auto" :src="videosrc">
+				</video>
+			</div> -->
+		<transition name="el-zoom-in-center">
+			<div class="bgimg" v-show="bgshow" :style="bgp"></div>
+		</transition>
+		<div class="wrapper">
+			<div class="logo">
+				<img src="https://pic.imgdb.cn/item/63f5acd2f144a01007e3cc24.png" style="width: 100%; height: auto;">
+			</div>
+			<br>
+			<div class="searchbox" @keydown.enter="doSearch">
+				<el-autocomplete style="width: 100%;" class="inline-input" v-model="input"
+					:fetch-suggestions="querySearch" placeholder="请输入内容" :trigger-on-focus="false"
+					@select="handleSelect">
+					<el-button slot="append" icon="el-icon-search" @click="doSearch"></el-button>
+				</el-autocomplete>
+			</div>
+			<transition name="el-zoom-in-center">
+				<div class="blur_box" v-show="isSuccess" @click="changeContent">
+					<!-- 随机一句暖心话 -->
+					<b>{{content}}</b>
+				</div>
+			</transition>
+			<transition name="el-zoom-in-center">
+				<div class="blur_box" v-show="isSuccess2" @click="changeContent2"
+					style="margin-top: 20px;overflow: hidden;">
+					<!-- 随机一句暖心话 -->
+					<div><b>{{content2.content}}</b></div>
+					<div style="float: right;"><b>—— {{content2.source}}</b></div>
+				</div>
+			</transition>
+
+		</div>
+		<div class="overlay">
+			<el-button @click="clickCodeServer" style="float:left;">cede-server</el-button>
+			<el-button @click="click" style="float: left;">橘里橘气</el-button>
+		</div>
+	</div>
+</body>
+
+<style>
+	html,
+	body {
+		min-width: 350px;
+		margin: 0;
+		padding: 0;
+		font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+	}
+
+	.blur_box {
+		font-size: 20px;
+		margin: 0 auto 0 auto;
+		position: relative;
+		bottom: -10vh;
+		left: 0;
+		right: 0;
+		padding: 20px;
+		color: #fff;
+		background-color: rgba(0, 0, 0, 0.1);
+		/* background-color: transparent; */
+		border-radius: 10px;
+		cursor: pointer;
+		height: fit-content;
+		width: fit-content;
+		backdrop-filter: blur(15px);
+		-webkit-backdrop-filter: blur(15px);
+	}
+
+	.background {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		z-index: -10;
+	}
+
+	.use_image {
+		background-image: url(https://f005.backblazeb2.com/file/img-forWeb/uPic/000000.gif);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.bgimg {
+		filter: brightness(0.7);
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		/* background: url(https://v-storage.hitokoto.cn/2022/HitokotoBanner04-PC.jpg) center no-repeat; */
+		/* background: url(https://s1.ax1x.com/2023/04/14/ppztquq.jpg) center no-repeat; */
+		/* background: url(https://v1.yurikoto.com/wallpaper?type=rand&s=1) center no-repeat; */
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.wallpaper_video {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	.overlay {
+		position: fixed;
+		right: 10px;
+		bottom: 10px;
+	}
+
+	.wrapper {
+		width: 800px;
+		margin: 0 auto;
+	}
+
+	.wrapper .logo {
+		width: 540px;
+		height: 258px;
+		margin: 0 auto;
+	}
+
+	.wrapper .el-input__inner {
+		height: 60px;
+		font-size: 25px;
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+
+	.wrapper .el-input-group__append {
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+		font-size: 25px;
+	}
+	
+	.el-input__inner:focus {
+	     
+	      border: #11be59 1px solid; !important
+	   }
+</style>
+
+<script>
+	function jsonp(url) {
+		return new Promise(() => {
+			var JSONP = document.createElement("script");
+			JSONP.src = `${url}`
+			document.getElementsByTagName("head")[0].appendChild(JSONP);
+		})
+	}
+
+	var gcb = () => {};
+
+	function fn(result) {
+		vue.recommandList = result.s
+		var results = []
+		for (var i = 0; i < vue.recommandList.length; i++) {
+			results[i] = {
+				"value": vue.recommandList[i],
+				"index": i,
+			}
+		}
+		gcb(results)
+		document.getElementsByTagName("head")[0].removeChild(document.getElementsByTagName("head")[0].lastChild)
+	}
+
+	const vue = new Vue({
+		data() {
+			return {
+				bgp: {
+					backgroundImage: "url(" + "https://v1.yurikoto.com/wallpaper?type=rand&s=" + new Date().getTime() + ")"
+				},
+				bgshow: true,
+				notIpad: true,
+				input: '',
+				recommandList: [],
+				content: '',
+				content2: '',
+				isSuccess: false,
+				isSuccess2: false,
+				videosrc: 'https://files.codelife.cc/itab/defaultWallpaper/videos/v-15.mp4'
+			}
+		},
+		created() {
+			if (navigator.userAgent.match(/^((?!Chrome).)*$/)) {
+				this.notIpad = false
+			}
+			axios.get('https://peirong.co:8443/lovelive/getText').then(res => {
+				this.content = res.data
+				this.isSuccess = true
+			})
+			axios.get('https://v1.yurikoto.com/sentence').then(res => {
+				setTimeout(() => {
+					this.content2 = res.data;
+					this.isSuccess2 = true
+				}, 100)
+			})
+		},
+		methods: {
+			doSearch() {
+				window.location.href = `https://www.baidu.com/s?wd=${this.input}`
+			},
+
+			querySearch(queryString, cb) {
+				gcb = cb
+				jsonp(`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${queryString}&cb=fn`)
+			},
+
+			handleSelect(item) {
+				window.location.href = `https://www.baidu.com/s?wd=${this.recommandList[item.index]}`
+			},
+
+			changeContent() {
+				this.isSuccess = false
+				axios.get('https://peirong.co:8443/lovelive/getText').then(res => {
+					this.content = res.data
+					this.isSuccess = true
+				})
+			},
+
+			changeContent2() {
+				this.isSuccess2 = false
+				axios.get('https://v1.yurikoto.com/sentence').then(res => {
+					setTimeout(() => {
+						this.content2 = res.data;
+						this.isSuccess2 = true;
+					}, 100)
+				})
+			},
+
+			click() {
+				this.bgshow = false
+				setTimeout(() => {
+					this.bgp.backgroundImage = "url(https://v1.yurikoto.com/wallpaper?type=rand&s=" + new Date().getTime() + ")"
+					setTimeout(() => {
+						this.bgshow = true
+					}, 500)
+				}, 200)
+			},
+
+			clickCodeServer() {
+				window.open('http://124.222.50.217:8080')
+			}
+		}
+	}).$mount('#app')
+</script>
+</html>
