@@ -30,4 +30,15 @@
   
   
   
+  <entry>
+    <title>test</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<p>???</p>]]></content>
+    
+  </entry>
+  
+  
+  
 </search>
