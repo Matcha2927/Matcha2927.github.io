@@ -433,7 +433,7 @@ sup > a::before,
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: rgba(231,84,128,0.7);
+    background: rgba(0,0,0,0.5);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
   }
@@ -442,7 +442,7 @@ sup > a::before,
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: #e75480;
+    background: #000;
   }
 }
 @media (max-width: 767px) {
@@ -851,11 +851,11 @@ i.iconfont {
   --sec-text-color: #718096;
   --post-text-color: #2c3e50;
   --post-heading-color: #1a202c;
-  --post-link-color: #0366d6;
-  --link-hover-color: #30a9de;
+  --post-link-color: #33CC66;
+  --link-hover-color: #33CC66;
   --link-hover-bg-color: #f8f9fa;
   --line-color: #eaecef;
-  --navbar-bg-color: #e75480;
+  --navbar-bg-color: #000;
   --navbar-text-color: #fff;
   --subtitle-color: #fff;
   --scrollbar-color: #c4c6c9;
@@ -876,8 +876,8 @@ i.iconfont {
     --sec-text-color: #a7a9ad;
     --post-text-color: #c4c6c9;
     --post-heading-color: #c4c6c9;
-    --post-link-color: #1589e9;
-    --link-hover-color: #30a9de;
+    --post-link-color: #33CC66;
+    --link-hover-color: #33CC66;
     --link-hover-bg-color: #364151;
     --line-color: #435266;
     --navbar-bg-color: #1f3144;
@@ -899,7 +899,7 @@ i.iconfont {
     :root:not([data-user-color-scheme]) .navbar .dropdown-collapse,
     :root:not([data-user-color-scheme]) .top-nav-collapse,
     :root:not([data-user-color-scheme]) .navbar-col-show {
-      background: rgba(31,49,68,0.7);
+      background: rgba(31,49,68,0.5);
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
     }
@@ -927,8 +927,8 @@ i.iconfont {
   --sec-text-color: #a7a9ad;
   --post-text-color: #c4c6c9;
   --post-heading-color: #c4c6c9;
-  --post-link-color: #1589e9;
-  --link-hover-color: #30a9de;
+  --post-link-color: #33CC66;
+  --link-hover-color: #33CC66;
   --link-hover-bg-color: #364151;
   --line-color: #435266;
   --navbar-bg-color: #1f3144;
@@ -950,7 +950,7 @@ i.iconfont {
   [data-user-color-scheme="dark"] .navbar .dropdown-collapse,
   [data-user-color-scheme="dark"] .top-nav-collapse,
   [data-user-color-scheme="dark"] .navbar-col-show {
-    background: rgba(31,49,68,0.7);
+    background: rgba(31,49,68,0.5);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
   }
