@@ -573,11 +573,11 @@ sup > a::before,
   padding-right: 1rem !important;
 }
 #nprogress .bar {
-  height: 3px !important;
-  background-color: #ffb6c1 !important;
+  height: 10px !important;
+  background-color: #e75480 !important;
 }
 #nprogress .peg {
-  box-shadow: 0 0 14px #ffb6c1, 0 0 8px #ffb6c1 !important;
+  box-shadow: 0 0 14px #e75480, 0 0 8px #e75480 !important;
 }
 @media (max-width: 575px) {
   #nprogress .bar {
