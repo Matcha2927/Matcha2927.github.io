@@ -433,7 +433,7 @@ sup > a::before,
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: rgba(47,65,84,0.7);
+    background: rgba(231,84,128,0.7);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
   }
@@ -442,7 +442,7 @@ sup > a::before,
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: #2f4154;
+    background: #e75480;
   }
 }
 @media (max-width: 767px) {
@@ -573,7 +573,7 @@ sup > a::before,
   padding-right: 1rem !important;
 }
 #nprogress .bar {
-  height: 10px !important;
+  height: 3px !important;
   background-color: #e75480 !important;
 }
 #nprogress .peg {
@@ -782,7 +782,7 @@ html {
 html,
 body {
   height: 100%;
-  font-family: var(--font-family-sans-serif);
+  font-family: sans-serif;;
   overflow-wrap: break-word;
 }
 body {
@@ -855,7 +855,7 @@ i.iconfont {
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #f8f9fa;
   --line-color: #eaecef;
-  --navbar-bg-color: #2f4154;
+  --navbar-bg-color: #e75480;
   --navbar-text-color: #fff;
   --subtitle-color: #fff;
   --scrollbar-color: #c4c6c9;
@@ -1362,7 +1362,7 @@ figure.highlight td.code > pre {
 .markdown-body {
   font-size: 1rem;
   line-height: 1.6;
-  font-family: var(--font-family-sans-serif);
+  font-family: sans-serif;;
   margin-bottom: 2rem;
   color: var(--post-text-color);
 }
