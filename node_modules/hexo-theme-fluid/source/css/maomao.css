@@ -1,0 +1,16 @@
+#maomao {
+	position: fixed;
+	bottom: 40px;
+	right: -5px;
+	width: 57px;
+	height: 70px;
+	background-image: url(https://s3.us-east-005.backblazeb2.com/matcha2927/2023/05/219d8f4816e8069cb5b464c6213a06f3.svg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: background .3s;
+}
+
+#maomao:hover {
+	background-position: 60px 50%;
+}
