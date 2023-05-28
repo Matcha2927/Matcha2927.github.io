@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true # 开启后使用hexo new生成的是文件夹而不是单个md文件，可以包含资源文件
 relative_link: false
 future: true
 highlight:
@@ -105,3 +105,12 @@ deploy:
   type: git
 	repo: https://github.com/Matcha2927/Matcha2927.github.io.git
 	branch: blog
+
+# hexo默认开启了gfm语法，回车直接视为换行。若要关闭此功能需要添加下面这一项
+# marked渲染器的文档中有详细配置说明 https://github.com/hexojs/hexo-renderer-marked
+marked:
+    gfm: true
+    breaks: false
+		## 打开这两项可以使渲染后的本地图片路径自动加上相应的前缀以正常显示
+		prependRoot: true
+		postAsset: true
