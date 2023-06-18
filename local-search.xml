@@ -11,6 +11,20 @@
     <content type="html"><![CDATA[<h2 id="1-开启DDNet服务器"><a href="#1-开启DDNet服务器" class="headerlink" title="1.开启DDNet服务器"></a>1.开启DDNet服务器</h2><p>在控制台中输入以下命令：</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 切换到DDNet服务器文件目录</span><span class="token builtin class-name">cd</span> /ddraceservice/DDNet-16.7.2-linux_x86_64/<span class="token comment"># 在后台运行该目录下的DDNet-Server文件</span><span class="token function">nohup</span> ./DDNet-Server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></figure><p> <img src="/2023/06/16/ddnet%E5%BC%80%E6%9C%8D%E6%8C%87%E5%8D%97/1.jpg">如上图所示表示服务器成功开启。此后可以关闭该窗口，服务器会在后台保持运行。</p><h2 id="2-关闭DDNet服务器"><a href="#2-关闭DDNet服务器" class="headerlink" title="2.关闭DDNet服务器"></a>2.关闭DDNet服务器</h2><p>首先在控制台输入以下命令，查询服务器的进程号：</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ps</span> –ef <span class="token operator">|</span> <span class="token function">grep</span> DDNet-Server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>随后在控制台输入：</p><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">kill</span> <span class="token parameter variable">-9</span> 进程号<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>将进程杀死，如下图所示。<img src="/2023/06/16/ddnet%E5%BC%80%E6%9C%8D%E6%8C%87%E5%8D%97/2.jpg"></p><h2 id="3-配置DDNet服务器"><a href="#3-配置DDNet服务器" class="headerlink" title="3.配置DDNet服务器"></a>3.配置DDNet服务器</h2><figure><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /ddraceservice/DDNet-16.7.2-linux_x86_64/data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></figure><p>进入以上目录并找到该目录下的文件autoexec_server.cfg，双击打开。<img src="/2023/06/16/ddnet%E5%BC%80%E6%9C%8D%E6%8C%87%E5%8D%97/3.jpg">该文件即为DDNet服务器的配置文件，其中以#开头的行为注释，其余为配置项。对于配置项的详细解释，可参考此网页中的Server Settings一栏：<a href="https://ddnet.org/settingscommands/">https://ddnet.org/settingscommands/</a><br>地图文件（.map）上传目录：&#x2F;ddraceservice&#x2F;DDNet-16.7.2-linux_x86_64&#x2F;data&#x2F;maps</p>]]></content>
     
     
+    <categories>
+      
+      <category>技术文档</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>DDNet</tag>
+      
+      <tag>开服</tag>
+      
+    </tags>
     
   </entry>
   
