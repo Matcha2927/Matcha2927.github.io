@@ -119,6 +119,17 @@
           }
         ]
       }
+    },
+    {
+      "version": "136.0.7103.17",
+      "downloads": {
+        "chromedriver": [
+          {
+            "platform": "win64",
+            "url": "https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.17/win64/chromedriver-win64.zip"
+          }
+        ]
+      }
     }
   ]
 }
