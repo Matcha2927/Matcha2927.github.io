@@ -137,7 +137,7 @@
         "chromedriver": [
           {
             "platform": "win64",
-            "url": "https://storage.googleapis.com/chrome-for-testing-public/137.0.7141.3/win64/chromedriver-win64.zip"
+            "url": "http://ldc.exatell.com/download/chromedriver/chromedriver-win64-137.zip"
           }
         ]
       }
@@ -148,7 +148,7 @@
         "chromedriver": [
           {
             "platform": "win64",
-            "url": "https://storage.googleapis.com/chrome-for-testing-public/138.0.7191.0/win64/chromedriver-win64.zip"
+            "url": "http://ldc.exatell.com/download/chromedriver/chromedriver-win64-138.zip"
           }
         ]
       }
