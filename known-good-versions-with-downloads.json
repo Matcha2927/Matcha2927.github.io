@@ -152,6 +152,17 @@
           }
         ]
       }
+    },
+     {
+      "version": "139.0.3394.0",
+      "downloads": {
+        "chromedriver": [
+          {
+            "platform": "win64",
+            "url": "https://ghfast.top/https://raw.githubusercontent.com/Matcha2927/Matcha2927.github.io/blog/chromedriver-win64-139.zip"
+          }
+        ]
+      }
     }
   ]
 }
