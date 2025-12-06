@@ -121,7 +121,7 @@
       }
     },
     {
-      "version": "136.0.7103.17",
+      "version": "138.0.7103.17",
       "downloads": {
         "chromedriver": [
           {
@@ -143,12 +143,12 @@
       }
     },
     {
-      "version": "138.0.7191.0",
+      "version": "143.0.7191.0",
       "downloads": {
         "chromedriver": [
           {
             "platform": "win64",
-            "url": "https://ghfast.top/https://raw.githubusercontent.com/Matcha2927/Matcha2927.github.io/blog/chromedriver-win64-138.zip"
+            "url": "https://ghfast.top/https://raw.githubusercontent.com/Matcha2927/Matcha2927.github.io/blog/chromedriver-win64-143.zip"
           }
         ]
       }
