@@ -192,10 +192,20 @@
         "chromedriver": [
           {
             "platform": "win64",
-            "url": "https://ghfast.top/https://raw.githubusercontent.com/Matcha2927/Matcha2927.github.io/blog/chromedriver-win64-142.zip"
+            "url": "https://ghfast.top/https://raw.githubusercontent.com/Matcha2927/Matcha2927.github.io/blog/chromedriver-win64-144.zip"
           }
         ]
       }
-    }
+    },{
+      "version": "144.0.7191.0",
+      "downloads": {
+        "chromedriver": [
+          {
+            "platform": "win64",
+            "url": "https://ghfast.top/https://raw.githubusercontent.com/Matcha2927/Matcha2927.github.io/blog/chromedriver-win64-143.zip"
+          }
+        ]
+      }
+    },
   ]
 }
