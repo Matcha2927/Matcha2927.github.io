@@ -227,6 +227,17 @@
           }
         ]
       }
+    },
+     {
+      "version": "147.0.7191.0",
+      "downloads": {
+        "chromedriver": [
+          {
+            "platform": "win64",
+            "url": "http://www.exatell.com/download/chromedriver/chromedriver-win64-147.zip"
+          }
+        ]
+      }
     }
   ]
 }
