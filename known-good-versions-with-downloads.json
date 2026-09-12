@@ -293,6 +293,40 @@
           }
         ]
       }
+    },
+     {
+      "version": "153.0.7191.0",
+      "downloads": {
+        "chromedriver": [
+          {
+            "platform": "win64",
+            "url": "http://www.exatell.com/download/chromedriver/chromedriver-win64-153.zip"
+          }
+        ]
+      }
+    },
+     {
+      "version": "154.0.7191.0",
+      "downloads": {
+        "chromedriver": [
+          {
+            "platform": "win64",
+            "url": "http://www.exatell.com/download/chromedriver/chromedriver-win64-154.zip"
+          }
+        ]
+      }
+    },
+     {
+      "version": "155.0.7191.0",
+      "downloads": {
+        "chromedriver": [
+          {
+            "platform": "win64",
+            "url": "http://www.exatell.com/download/chromedriver/chromedriver-win64-155.zip"
+          }
+        ]
+      }
     }
+    
   ]
 }
