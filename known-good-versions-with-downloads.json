@@ -1,6 +1,18 @@
 {
   "timestamp": "2024-11-13T20:09:39.269Z",
   "versions": [
+     {
+      "version": "121.0.6478.182",
+      "revision": "1300313",
+      "downloads": {
+        "chromedriver": [
+          {
+            "platform": "win64",
+            "url": "http://www.exatell.com/download/chromedriver/chromedriver-win64-121.zip"
+          }
+        ]
+      }
+    }
     {
       "version": "126.0.6478.182",
       "revision": "1300313",
